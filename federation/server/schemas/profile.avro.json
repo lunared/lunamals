@@ -1,0 +1,9 @@
+{
+    "namespace": "lunamals.federation",
+    "type": "record",
+    "name": "User",
+    "fields": [
+        {"name": "id", "type": "string"},
+        {"name": "name", "type": "string"}
+    ]
+}

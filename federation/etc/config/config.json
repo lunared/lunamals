@@ -1,0 +1,16 @@
+{
+    "openid": {
+        "client_id": "lunamals",
+        "grant_types": ["implicit"],
+        "response_types": ["id_token"],
+        "redirect_uris": ["/home"],
+        "token_endpoint_auth_method": "none"
+    },
+    "jwt": {
+        "secretkey": "secret"
+    },
+    "redis": {
+        "port": 6379,
+        "host": "redis"
+    }
+}

@@ -1,0 +1,15 @@
+# one big testbed for lunamals, spins up all the services and dependencies necessary in one go
+version: '3'
+services:
+  db:
+    image: postgres
+  cache:
+    image: redis
+  consul:
+    image: consul
+    ports:
+      - 8500:8500
+      - 8600:8600
+  events:
+    image: rabbitmq
+    

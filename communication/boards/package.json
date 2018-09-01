@@ -1,0 +1,14 @@
+{
+  "name": "lunamal-boards",
+  "version": "1.0.0",
+  "description": "Discourse powered group communication, with a simple API abstraction layer for Lunamals needs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.2"
+  }
+}
