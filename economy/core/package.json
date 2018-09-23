@@ -1,5 +1,5 @@
 {
-  "name": "lunamals-economy-core",
+  "name": "@lunamals/economy-core",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,5 +10,18 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.5.2",
+    "consul": "^0.34.0",
+    "fastify": "^1.11.1",
+    "@lunamals/common": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1"
+  }
 }

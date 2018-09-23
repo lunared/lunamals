@@ -1,5 +1,5 @@
 {
-  "name": "lunamals-pets",
+  "name": "@lunamals/pets",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,7 @@
   "dependencies": {
     "amqp": "^0.2.7",
     "consul": "^0.34.0",
-    "fastify": "^1.11.0"
+    "fastify": "^1.11.0",
+    "@lunamals/common": "^1.0.0"
   }
 }

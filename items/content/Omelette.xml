@@ -1,0 +1,37 @@
+<Item name="Omelette">
+    <Actions>
+        <Consume id="0" hunger="10">
+            <After runtime="js">
+                if (pet.species == "Bird") {
+                    if (math.random() > .02) {
+                        sick("tummyache");
+                    }
+                }
+
+                exchange("Half-Eaten Omelette");
+                // increment achievement progress by 1
+                achievement("omelette-eater", 1);
+            </After>
+        </Consume>
+        <Play id="1" joy="2"></Play>
+    </Actions>
+</Item>
+
+name: "Omelette"
+actions:
+    - type: "Consume"
+      hunger: 10
+      after:
+        - runtime: "js"
+          code: |
+            if (pet.species == "Bird") {
+                if (math.random() > .02) {
+                    sick("tummyache");
+                }
+            }
+
+            exchange("Half-Eaten Omelette");
+            // increment achievement progress by 1
+            achievement("omelette-eater", 1);
+    - type: "Play"
+      joy: 2

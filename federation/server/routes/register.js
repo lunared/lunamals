@@ -9,7 +9,7 @@ const RegisterUser = {
 
         },
     },
-    async handler(req) {
+    async handler(req, reply) {
         const { body, $storage, $amqp } = req;
 
         let profile = {
@@ -27,7 +27,7 @@ const RegisterUser = {
             ]
         }
         return {
-            token: $jwt.sign(payload),
+            token: reply.jwtSign(payload),
         }
     },
 };
@@ -40,8 +40,8 @@ const LoginUser = {
 
         }
     },
-    async handler(req, res) {
-        const { body, $storage, $amqp, $jwt } = req;
+    async handler(req, reply) {
+        const { body, $storage } = req;
 
         const user = await $storage.users.fetchOne({
             username: body.username,
@@ -60,7 +60,7 @@ const LoginUser = {
             ]
         }
         return {
-            token: $jwt.sign(payload),
+            token: reply.jwtSign(payload),
         }
     }
 }

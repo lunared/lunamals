@@ -7,10 +7,17 @@ const consul = require('consul')({
 const fastify = require('fastify')({
     logger: true
 });
+
+let JWT_SECRET = '';
+fastify.register(require('fastify-jwt'), {
+    secret: () => {
+        return JWT_SECRET;
+    }
+});
+
 const Redis = require('ioredis');
 const amqp = require('amqplib');
 const ProfileStorage = require('./lib/profile/storage');
-const jwt = require('jsonwebtoken');
 
 // consul agent for hot-reloading features based on configuration
 const agent = consul.watch({
@@ -25,20 +32,14 @@ agent.on('change', async (data) => {
     const cache = new Redis(config.redis);
     const events = amqp.connect(config.amqp);
 
+    JWT_SECRET = config.jwt.secret;
+
     // storage stuff
     fastify.decorateRequest('$cache', cache);
     fastify.decorateRequest('$storage', {
         users: new ProfileStorage(config.storage),
     });
     fastify.decorateRequest('$amqp', events);
-    fastify.decorateRequest('$jwt', {
-        sign(payload) {
-            return jwt.sign(payload, config.jwt.secret);
-        },
-        verify(payload) {
-            return jwt.verify(payload, config.jwt.secret);
-        } 
-    });
 });
 
 // add other routes

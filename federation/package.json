@@ -1,5 +1,5 @@
 {
-  "name": "lunamal-federation",
+  "name": "@lunamals/federation",
   "version": "1.0.0",
   "description": "User profile and auth management for lunamals",
   "main": "index.js",
@@ -12,10 +12,9 @@
     "amqplib": "^0.5.2",
     "consul": "^0.34.0",
     "fastify": "^1.11.0",
+    "fastify-jwt": "^0.3.0",
     "ioredis": "^4.0.0",
-    "jsonwebtoken": "^8.3.0",
-    "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
+    "jsonwebtoken": "^8.3.0"
   },
   "devDependencies": {
     "eslint": "^5.4.0",

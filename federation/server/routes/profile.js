@@ -1,4 +1,4 @@
-const { UserFromToken } = require('../jwt');
+const { jwt: { UserFromToken } } = require('@lunamals/common');
 
 /**
  * Get more details about the logged in user
