@@ -1,0 +1,10 @@
+{
+    "couch": {
+        "host": "couchbase://127.0.0.1",
+        "username": "Administrator",
+        "password": "lunamals"
+    },
+    "jwt": {
+        "secret": "s3cret"
+    }
+}

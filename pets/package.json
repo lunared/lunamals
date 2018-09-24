@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "amqp": "^0.2.7",
+    "@lunamals/common": "^1.0.0",
+    "amqplib": "^0.5.2",
     "consul": "^0.34.0",
+    "couchbase": "^2.5.1",
     "fastify": "^1.11.0",
-    "@lunamals/common": "^1.0.0"
+    "jsonwebtoken": "^8.3.0"
   }
 }

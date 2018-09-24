@@ -16,9 +16,12 @@ We're focused on creating a game with community, and with the cost of very speci
 
 If you can think of a way to implement a feature in Lunamals using an existing, well supported, easy to deploy, scalable open-source project instead, go for it.
 
+## Managing Node.js Dependencies
+A lot of the microservices benefit from sharing components, and thus when possible have their code split into libraries under the `@lunamals` group for node.  We do not publish any of these libraries to npm public itself due to being application specific libs.  You can do the work needed to locally link packages, or you can use a locally/private hosted npm for development.  Included in the docker-compose.yml is a Nexus3 OSS instance that can be used to deploy a local npm repository.  All node packages designed for publishing as libraries are configured to push to a local repository named `lunamals-npm` if configured.  It's recommended you create a npm-proxy and then a lunamals group.  Instructions on setting this up are available on [Sonatype's website](https://blog.sonatype.com/using-nexus-3-as-your-repository-part-2-npm-packages)
+
 # Scheduling tasks
 
-We use RunDeck.  Place job definitions in a projects `etc/rundeck` directory, and the rundeck crawler script provided with lunamals will add all of them.  It's then up to you to go into rundeck and point the jobs to the proper instances/resources in case the jobs need to access the services on something other than localhost.  It's recommended you run 2 instances of the api gateway, one for public access and another for internal resources to keep configuration simple.
+We use Jenkins.  Place job definitions in a projects `etc/jenkins` directory, and the jenkins crawler script provided with lunamals will add all of them.  It's then up to you to go into jenkins and point the jobs to the proper instances/resources in case the jobs need to access the services on something other than localhost.  It's recommended you run 2 instances of the api gateway, one for public access and another for internal resources to keep configuration simple.
 
 # Handling Auth
 
